@@ -1,8 +1,4 @@
 uint16_t amount = 10000;
-//int thousands = 0;
-//int hundreds = 0;
-//int tens = 0;
-//int units = 0;
 
 void setup() {
   Serial.begin(115200);
@@ -28,18 +24,18 @@ void loop() {
     if (thousands >= 1)
     {
       greaterthan0(thousands);
-      Serial.print(" Thousands");
+      Serial.print("Thousand ");
     }
     if (hundreds >= 1)
     {
       greaterthan0(hundreds);
-      Serial.print(" Hundredzz");
+      Serial.print("Hundred ");
     }
     if (tens >= 2)
     {
       if (amount > 100)
       {
-        Serial.print(" AND ");
+        Serial.print("AND ");
       }
       greaterthan20(tens);
       if (ones > 0)
@@ -51,7 +47,7 @@ void loop() {
     {
       if (amount > 100)
       {
-        Serial.print(" AND ");
+        Serial.print("AND ");
       }
 
       greaterthan10(ones);
@@ -60,7 +56,7 @@ void loop() {
     {
       if (amount > 100)
       {
-        Serial.print(" AND ");
+        Serial.print("AND ");
       }
 
       if (ones > 0)
@@ -91,28 +87,30 @@ void greaterthan20(int hundredstemp)
     Serial.print("Thirty");
   else if (hundredstemp == 2)
     Serial.print("Twenty");
+  Serial.print(" ");
 }
 
 void greaterthan0(int tens_tmp)
 {
   if (tens_tmp == 1)
-    Serial.print(" One");
+    Serial.print("One");
   if (tens_tmp == 2)
-    Serial.print(" Two");
+    Serial.print("Two");
   if (tens_tmp == 3)
-    Serial.print(" Three");
+    Serial.print("Three");
   if (tens_tmp == 4)
-    Serial.print(" Four");
+    Serial.print("Four");
   if (tens_tmp == 5)
-    Serial.print(" Five");
+    Serial.print("Five");
   if (tens_tmp == 6)
-    Serial.print(" Six");
+    Serial.print("Six");
   if (tens_tmp == 7)
-    Serial.print(" Seven");
+    Serial.print("Seven");
   if (tens_tmp == 8)
-    Serial.print(" Eight");
+    Serial.print("Eight");
   if (tens_tmp == 9)
-    Serial.print(" Nine");
+    Serial.print("Nine");
+  Serial.print(" ");
 }
 void greaterthan10(int onestemp)
 {
@@ -136,4 +134,5 @@ void greaterthan10(int onestemp)
     Serial.println("Eighteen");
   if (onestemp == 9)
     Serial.println("Nineteen");
+  Serial.print(" ");
 }
